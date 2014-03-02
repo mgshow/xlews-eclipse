@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+<extension id="org.lemansys.xlem.eclipse.nature.xlemNature" name="XLEM Project Nature" point="org.eclipse.core.resources.natures">
+	<runtime>
+		<run class="org.lemansys.xlews.eclipse.perspectives.XLemNature">
+		</run>
+	</runtime>
+</extension>
+<extension point="org.eclipse.ui.ide.projectNatureImages">
+	<image icon="icons/new_web_service.gif" id="org.lemansys.xlem.eclipse.nature.xlemNature.img" natureId="org.lemansys.xlem.eclipse.nature.xlemNature">
+	</image>
+</extension>
+
+<extension point="org.eclipse.ui.perspectives">
+	<perspective
+	id="org.lemansys.xlews.eclipse.perspectives.XLemPerspective"
+	name="XLEM"
+	icon="icons/xlem.png"
+	class="org.lemansys.xlews.eclipse.perspectives.XLemPerspective"/>
+</extension>
+
+<extension point="org.eclipse.ui.views">
+	<category
+		id="org.lemansys.xlews.eclipse.views"
+		name="XLEM">
+	</category>
+	
+	<view
+		id="org.lemansys.xlews.eclipse.views.XLemServerView"
+		name="Servers"
+		category="org.lemansys.xlews.eclipse.views"
+		class="org.lemansys.xlews.eclipse.views.XLemServerView"
+		icon="icons/deployment_descriptor.gif">
+	</view>
+	
+
+</extension>
+
+ <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.lemansys.xlews.editors.xlem.XLemEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="xlem"
+            icon="icons/xlem.png"
+            id="org.lemansys.xlews.editors.xlem.XLemEditor"
+            name="XLEM Page Editor">
+      </editor>
+      <editor
+            class="org.lemansys.xlews.editors.xlem.XLemEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="xlmh"
+            icon="icons/module.gif"
+            id="org.lemansys.xlews.editors.xlem.XLmhEditor"
+            name="XLMH Editor">
+      </editor>
+   </extension>
+
+ <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="XLEWS.Eclipse"
+            name="XLEWS">
+      </category>
+      <wizard
+            category="XLEWS.Eclipse"
+            class="org.lemansys.xlews.eclipse.wizards.XLemNewWizard"
+            icon="icons/new_xlem.png"
+            id="org.lemansys.xlews.eclipse.wizards.XLemNewWizard"
+            name="XLEM Page">
+      </wizard>
+      
+       <wizard
+       		project="true"
+            category="XLEWS.Eclipse"
+            class="org.lemansys.xlews.eclipse.wizards.XLemNewProjectWizard"
+            icon="icons/new_web_service.gif"
+            id="org.lemansys.xlews.eclipse.wizards.XLemNewProjectWizard"
+            name="XLEWS Project">
+      </wizard>
+      
+</extension>
+
+
+</plugin>
